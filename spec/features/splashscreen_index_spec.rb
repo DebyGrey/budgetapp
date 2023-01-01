@@ -7,15 +7,15 @@ RSpec.feature 'Splashscreen', type: :feature, js: true do
     expect(page).to have_content('Grey Budget App')
   end
 
-  scenario 'Click sign in' do
-    visit root_path
-    click_link 'Sign in'
-    expect(page).to have_current_path('/users/sign_in')
+  before(:each) { visit root_path }
+
+  scenario 'Click log in' do
+    click_link('Log In')
+    expect(page).to have_current_path(new_user_session_path)
   end
 
   scenario 'Click sign up' do
-    visit root_path
-    click_link 'Sign up'
-    expect(page).to have_current_path('/users/sign_up')
+    click_link('Sign Up')
+    expect(page).to have_current_path(new_user_registration_path)
   end
 end
