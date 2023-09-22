@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
- def index
+  def index
     @categories = Group.where(author_id: current_user.id)
   end
 
