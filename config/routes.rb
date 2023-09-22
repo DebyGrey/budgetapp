@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'homes#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  authenticated :user do
+    resources :homes do
+      resources :transactions, only: [:new, :create]
+    end
+    root "homes#index", as: :authenticated_root
+  end
+
+  root "splashscreens#index" # This is the root route for unauthenticated users
+
+  # Other routes...
 end

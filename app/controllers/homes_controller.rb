@@ -1,13 +1,32 @@
 class HomesController < ApplicationController
-  def index; end
+  def index
+    @categories = Group.where(author_id: current_user.id)
+  end
+
+  def new
+    @category = Group.new
+  end
+
+  def create
+    @category = Group.new(category_params)
+    @category.user = current_user
+
+    if @category.save
+      redirect_to homes_path, notice: 'Category was successfully created.'
+    else
+      render :new
+    end
+  end
 
   def show
-    if params[:id] == 'sign_out'
-      sign_out current_user
-      redirect_to new_user_session_path
-    else
-      @user = current_user
-      @first_user = @user
-    end
+    @category = Group.find(params[:id])
+    @transactions = @category.transactions
+    @total_amount = @transactions.sum(:amount)
+  end
+
+  private
+
+  def category_params
+    params.require(:group).permit(:name, :icon)
   end
 end

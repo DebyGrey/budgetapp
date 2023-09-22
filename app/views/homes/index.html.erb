@@ -1,1 +1,25 @@
-<h1>Welcome to yout home page</h1>
+<% @categories.each do |category| %>
+  <div class="container my-4">
+    <div class="row border p-3">
+      <div class="col-3">
+        <!-- Set a fixed height for the image -->
+        <img src="<%= category.icon %>" class="img-fluid rounded" alt="<%= category.name %> Icon" style="max-width: 100%; height: 100px;">
+      </div>
+      <div class="col-5">
+        <h3><%= link_to category.name, category_path(category) %></h3>
+        <p>Created: <%= category.created_at.strftime('%B %d, %Y') %></p>
+      </div>
+      <div class="col-2">
+        <p>Total Spent:</p>
+        <h4><%= number_to_currency(category.total_spent) %></h4>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+<div class='container'>
+  <div class='row mb-4'>
+    <%= link_to 'New Category', new_home_path, class:'btn btn-outline-success me-5'%>
+  </div>
+</div>
