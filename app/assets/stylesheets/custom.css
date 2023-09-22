@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700;900&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.new-category-btn {
+  padding: 20px 35%;
+  border: rgb(248, 249, 248) solid 2px;
+  text-decoration: none;
+  color: white;
+}
+
+.new-category-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  padding: 2% 0;
+}
+
+.btn-success {
+  background-color: #5fb523;
+}
+
+.primary {
+  background-color: #3778c2;
+}
+
+.splash-buttons {
+  padding-top: 40px;
+}
+
+.splash-header {
+  font-family: 'Great Vibes', cursive;
+}

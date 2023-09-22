@@ -6,6 +6,6 @@ class User < ApplicationRecord
   # Validations
   validates :name, presence: true
   # Associations
-  has_many :entities, dependent: :destroy
-  has_many :groups, dependent: :destroy
+  has_many :expenses, foreign_key: 'author_id', dependent: :destroy
+  has_many :categories, foreign_key: 'author_id', dependent: :destroy
 end

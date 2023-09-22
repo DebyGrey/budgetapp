@@ -1,10 +1,14 @@
-<div class="container-fluid text-center">
-<h1>Welcome</h1> <br>
-<h1> to </h1> <br>
-<h1>Grey Budget</h1> <br><br>
-<p>We are delighted to have you join us. Don't have an account?</p>
-<p class="nav-item"> <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"  %></p>
+  <div class='container'>
+  <div class="splash text-center mt-5 mb-5 g-4">
+    <h1 class='mt-5 mb-5 splash-header'>Grey Budget app</h1>
+    <div class="splash-buttons mt-5">
+          <div class='mt-5 primary'>
+      <%= link_to 'Log In', new_user_session_path, class: 'btn primary btn-lg text-white' %>
+      </div>
 
-<p>Otherwise</p>
-<p class="nav-item"> <%= link_to "Sign In", new_user_session_path, class: "nav-link"  %></p>
+    <div>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'btn  btn-lg mt-2' %>
+      </div>
+    </div>
+  </div>
 </div>
