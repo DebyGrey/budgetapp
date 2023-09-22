@@ -2,13 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    resources :homes do
-      resources :transactions, only: [:new, :create]
+    resources :categories do
+      resources :expenses, only: [:new, :create]
     end
-    root "homes#index", as: :authenticated_root
+    root "categories#index", as: :authenticated_root
   end
 
-  root "splashscreens#index" # This is the root route for unauthenticated users
-
-  # Other routes...
+  root "splashscreens#index"
 end
