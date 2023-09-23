@@ -71,7 +71,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://expensees-8a12127a5d1f.herokuapp.com/)
+- [Live Demo Link](https://budget-app-eo2t.onrender.com/)
 - [Project Demo Link](https://www.loom.com/share/7d652e6da7a74efaa734417cea3c0bc5?sid=25f5f2ef-834d-4842-aa1e-3e32ce2913d0)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
