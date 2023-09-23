@@ -1,0 +1,22 @@
+<div class="container mt-5 ">
+  <h1><%= @category.name %> expenditure</h1>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <p>Total Expenses: <%= @total_amount %></p>
+      <h2>Expenditures</h2>
+      
+      <% @expenses.each do |expense| %>
+        <div class="card mb-3">
+          <div class="card-body d-flex justify-content-between">
+            <h5 class="card-title"><%= expense.name %></h5>
+            <p class="card-text">Amount: <%= expense.amount %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <%= link_to 'Create New Expenditure', new_category_expense_path(@category), class: "btn btn-primary" %>
+</div>
